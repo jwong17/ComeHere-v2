@@ -1,0 +1,5 @@
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\bin\ComeHereWS.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\bin\ComeHereWS.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\bin\ComeHereWS.dll.config

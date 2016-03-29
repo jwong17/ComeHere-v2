@@ -1,0 +1,16 @@
+c:\users\jasmine\documents\visual studio 2010\Projects\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll
+c:\users\jasmine\documents\visual studio 2010\Projects\ComeHereApp\ComeHereApp\bin\ComeHereApp.pdb
+c:\users\jasmine\documents\visual studio 2010\Projects\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.dll
+c:\users\jasmine\documents\visual studio 2010\Projects\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.pdb
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll.config
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.pdb
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.dll
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll.config
+C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.csprojResolveAssemblyReference.cache

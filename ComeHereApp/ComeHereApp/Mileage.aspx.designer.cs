@@ -31,6 +31,15 @@ namespace ComeHereApp {
         protected global::System.Web.UI.WebControls.DropDownList selectCarDDL;
         
         /// <summary>
+        /// Table3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table3;
+        
+        /// <summary>
         /// totalDist control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace ComeHereApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label totalDist;
+        
+        /// <summary>
+        /// addTrip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton addTrip;
         
         /// <summary>
         /// totalLitres control.
@@ -58,13 +76,13 @@ namespace ComeHereApp {
         protected global::System.Web.UI.WebControls.Label avgMileage;
         
         /// <summary>
-        /// carName control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label carName;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// Table2 control.
@@ -92,5 +110,14 @@ namespace ComeHereApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tripLitres;
+        
+        /// <summary>
+        /// newTripLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label newTripLbl;
     }
 }

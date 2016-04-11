@@ -36,6 +36,7 @@ namespace ComeHereApp
             selectCarDDL.DataBind();
 
             refreshLabels();
+            Table3.Visible = true;
             }
         }
 
@@ -50,9 +51,9 @@ namespace ComeHereApp
             DataSet ds = new DataSet();
             da.Fill(ds);
 
-            totalDist.Text = "Total Distance: " + ds.Tables[0].Rows[0]["totalDist"].ToString() + "km";
-            totalLitres.Text = "Total Litres: " + ds.Tables[0].Rows[0]["totalLitres"].ToString() + "litres";
-            avgMileage.Text = "Average Mileage: " + (Int32.Parse(ds.Tables[0].Rows[0]["totalDist"].ToString()) / Int32.Parse(ds.Tables[0].Rows[0]["totalLitres"].ToString())).ToString() +"km/litre" ;
+            totalDist.Text =  ds.Tables[0].Rows[0]["totalDist"].ToString() + "km";
+            totalLitres.Text = ds.Tables[0].Rows[0]["totalLitres"].ToString() + "litres";
+            avgMileage.Text = "Avg: " + Math.Round(((Double.Parse(ds.Tables[0].Rows[0]["totalDist"].ToString()) / Double.Parse(ds.Tables[0].Rows[0]["totalLitres"].ToString()))) , 2).ToString() +"km/litre" ;
             
            
         }
@@ -60,6 +61,7 @@ namespace ComeHereApp
         protected void selectCarDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshLabels();
+            //Table3.Visible = true;
 
         }
 
@@ -72,9 +74,29 @@ namespace ComeHereApp
             SqlCommand com = new SqlCommand("UPDATE UsersCars SET totalDist = totalDist + " + tripDist.Text.ToString() + ", totalLitres = totalLitres + " + tripLitres.Text.ToString() + " WHERE userID = (Select [user].Id from dbo.[User] where [user].username = '"+Session["user"].ToString()+"') and carID = " + selectCarDDL.SelectedValue.ToString(), con);
             com.ExecuteNonQuery();
 
+            //adding to pumpdetails table
+            com = new SqlCommand("INSERT INTO pumpDetails(userID, carID, pumpDateTime, tripLitres, tripMileage) VALUES ((Select [user].Id from dbo.[User] where [user].username = '" + Session["user"].ToString() + "'),'" + selectCarDDL.SelectedValue.ToString() + "','" + System.DateTime.Now + "','" + tripLitres.Text.ToString() + "','" + tripDist.Text.ToString() + "')", con);
+            com.ExecuteNonQuery();
+
+
+
             refreshLabels();
             tripDist.Text = "";
             tripLitres.Text = "";
+            newTripLbl.Visible = true;
+            ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + newTripLbl.ClientID + "').style.display='none'\",2000)</script>");
+        }
+
+        protected void addTrip_Click(object sender, ImageClickEventArgs e)
+        {
+            if(Panel1.Visible)
+            {
+                Panel1.Visible = false;
+            }
+            else
+            {
+                Panel1.Visible = true;
+            }
         }
     }
 }

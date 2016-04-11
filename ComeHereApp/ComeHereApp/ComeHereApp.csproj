@@ -70,6 +70,7 @@
     </Content>
     <Content Include="css\styles.css" />
     <Content Include="images\1f4f8.png" />
+    <Content Include="images\26fd.png" />
     <Content Include="images\pattern.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />

@@ -21,7 +21,7 @@
         <tr>
             <td>
                 <asp:Button ID="signUpBtn" runat="server" Text="Sign Up" 
-        PostBackUrl="~/Registeration.aspx" OnClick="signUpBtn_Click" /></td>
+        PostBackUrl="~/Registration.aspx" OnClick="signUpBtn_Click" /></td>
             <td>
                <asp:Button ID="submitBtn" runat="server" Text="Submit" OnClick="submitBtn_Click" /></td>
 

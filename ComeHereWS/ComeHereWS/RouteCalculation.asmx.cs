@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using System.Xml;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace ComeHereWS
 {
@@ -91,6 +92,80 @@ namespace ComeHereWS
 
                 return results;
            
+        }
+
+        [WebMethod(Description = "Returns a list of information and url of image captures.")]
+        public List<CameraEntry> GetCameraView()
+        {
+
+
+            System.Net.WebRequest wr = HttpWebRequest.Create("http://datamall.mytransport.sg/ltaodataservice.svc/CameraImageSet");
+                wr.Headers.Add("AccountKey", "MjGz11eI4LGEqbKe1TC6Tw==");
+                wr.Headers.Add("UniqueUserID", "23a581d3-67c3-457b-8a24-baeed5ea896b");
+                wr.Method = "GET";
+                WebResponse res = wr.GetResponse();
+                string resStr
+                 = new System.IO.StreamReader(res.GetResponseStream()).ReadToEnd();
+
+                XNamespace atomNS
+                  = "http://www.w3.org/2005/Atom";
+                XNamespace dNS
+                  = "http://schemas.microsoft.com/ado/2007/08/dataservices";
+                XNamespace mNS
+                  = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata";
+
+                List<CameraEntry> results
+                  = (from item in XElement.Parse(resStr).Descendants(atomNS + "entry")
+                     let cam = item.Element(atomNS + "content").Element(mNS + "properties")
+                     select new CameraEntry()
+                     {
+                         CameraImageID = cam.Element(dNS + "CameraImageID").Value,
+                         CameraID = cam.Element(dNS + "CameraID").Value,
+                         Latitude = cam.Element(dNS + "Latitude").Value,
+                         Longitude = cam.Element(dNS + "Longitude").Value,
+                         ImageURL = cam.Element(dNS + "ImageURL").Value,
+                         CreateDate = cam.Element(dNS + "CreateDate").Value
+                     }).ToList();
+
+                return results;
+           
+        }
+
+        [WebMethod(Description = "Returns a list of information and url of speed camera.")]
+        public List<CameraEntry> GetSpeedCameraList()
+        {
+
+
+            System.Net.WebRequest wr = HttpWebRequest.Create("http://datamall.mytransport.sg/ltaodataservice.svc/CameraImageSet");
+            wr.Headers.Add("AccountKey", "MjGz11eI4LGEqbKe1TC6Tw==");
+            wr.Headers.Add("UniqueUserID", "23a581d3-67c3-457b-8a24-baeed5ea896b");
+            wr.Method = "GET";
+            WebResponse res = wr.GetResponse();
+            string resStr
+             = new System.IO.StreamReader(res.GetResponseStream()).ReadToEnd();
+
+            XNamespace atomNS
+              = "http://www.w3.org/2005/Atom";
+            XNamespace dNS
+              = "http://schemas.microsoft.com/ado/2007/08/dataservices";
+            XNamespace mNS
+              = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata";
+
+            List<CameraEntry> results
+              = (from item in XElement.Parse(resStr).Descendants(atomNS + "entry")
+                 let cam = item.Element(atomNS + "content").Element(mNS + "properties")
+                 select new CameraEntry()
+                 {
+                     CameraImageID = cam.Element(dNS + "CameraImageID").Value,
+                     CameraID = cam.Element(dNS + "CameraID").Value,
+                     Latitude = cam.Element(dNS + "Latitude").Value,
+                     Longitude = cam.Element(dNS + "Longitude").Value,
+                     ImageURL = cam.Element(dNS + "ImageURL").Value,
+                     CreateDate = cam.Element(dNS + "CreateDate").Value
+                 }).ToList();
+
+            return results;
+
         }
     }
 }

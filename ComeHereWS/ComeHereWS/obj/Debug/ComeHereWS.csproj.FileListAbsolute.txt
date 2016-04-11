@@ -3,3 +3,9 @@ C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\bin\ComeHereWS.
 C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.dll
 C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.pdb
 C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereWS\ComeHereWS\bin\ComeHereWS.dll.config
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\bin\ComeHereWS.dll.config
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\bin\ComeHereWS.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\bin\ComeHereWS.pdb
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.csprojResolveAssemblyReference.cache
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.dll
+C:\Users\Jasmine\Documents\GitHub\ComeHere-v2\ComeHereWS\ComeHereWS\obj\Debug\ComeHereWS.pdb

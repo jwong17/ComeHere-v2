@@ -49,12 +49,12 @@ namespace ComeHereApp {
         protected global::System.Web.UI.WebControls.Button searchBtn;
         
         /// <summary>
-        /// toggleCbl control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList toggleCbl;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

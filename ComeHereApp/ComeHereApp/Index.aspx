@@ -5,18 +5,41 @@
 
      var directionsDisplay = new google.maps.DirectionsRenderer;
      var directionsService = new google.maps.DirectionsService;
-
+     //var directionsResult = new google.maps.DirectionsResult;
+     var markers = [];
+     var map;
+     var cameraLocations = [{ lat:1.308094739302259, lng:103.8101809717971},
+                            { lat:1.308067608612278, lng:103.8102079284798},
+                            { lat:1.415298196118805, lng:103.8322852028067},
+                            { lat:1.41532532704901, lng:103.8323121604223},
+                            { lat:1.361947995843499, lng:103.7415209692295},
+                            { lat:1.361975127772033, lng:103.7415479251913},
+                            { lat:1.344737303653458, lng:103.7254913108929},
+                            { lat:1.344746348480353, lng:103.725518267281},
+                            { lat:1.298236739726613, lng:103.7816792401399},
+                            { lat:1.2982186533609, lng:103.7817241677078},
+                            { lat:1.38232437354741, lng:103.775486299165},
+                            { lat:1.382224894418002, lng:103.7755222445539},
+                            { lat:1.335252812589951, lng:103.8107378259928},
+                            { lat:1.335216638343102, lng:103.8107737686255},
+                            { lat:1.408198802340066, lng:103.8081492175769},
+                            { lat:1.386883042162874, lng:103.8203521162467},
+                            { lat:1.386864955127723, lng:103.8203970451815},
+                            { lat:1.413896418436688, lng:103.8413160031825},
+                            { lat:1.369207875504802, lng:103.9700987935173},
+                            ];
+     
      
 
      function initialize() {
-        
+         var location = {lat: 1.362856, lng: 103.807056};
 
          var mapProp = {
-             center: new google.maps.LatLng(1.2896700, 103.8500700),
+             center: new google.maps.LatLng(1.362193, 103.820613),
              zoom: 12,
              mapTypeId: google.maps.MapTypeId.ROADMAP
          };
-         var map = new google.maps.Map(document.getElementById("DivGoogleMapCanvas"), mapProp);
+         map = new google.maps.Map(document.getElementById("DivGoogleMapCanvas"), mapProp);
          directionsDisplay.setMap(map);
          directionsDisplay.setPanel(document.getElementById('dvPanel'));
 
@@ -27,8 +50,40 @@
          var startAutocomplete = new google.maps.places.Autocomplete(startInput);
          var endAutocomplete = new google.maps.places.Autocomplete(endInput);
 
-  
+         //adding our list of cameras to the map
+         for(i=0;i<cameraLocations.length;i++)
+         {
+             addMarker(cameraLocations[i], map);
+         }
+         
+         //addMarker(location,map);
+         setMapOnAll(null);
+         
+     }
 
+     function addMarker(location,map) {
+         var marker = new google.maps.Marker({
+             position: location,
+             map: map,
+             icon: '/images/1f4f8.png'
+         });
+         markers.push(marker);
+     }
+
+     function setMapOnAll(map) {
+         for (var i = 0; i < markers.length; i++) {
+             markers[i].setMap(map);
+         }
+     }
+     var toggle = false;
+     function showMarkers() {
+         toggle = !toggle;
+         if (toggle) {
+             setMapOnAll(map);
+         }
+         else {
+             setMapOnAll(null);
+         }
      }
 
      function calculateAndDisplayRoute() {
@@ -37,7 +92,13 @@
          directionsService.route({
              origin: start,
              destination: end,
-             travelMode: google.maps.TravelMode.DRIVING
+             travelMode: google.maps.TravelMode.DRIVING,
+             //drivingOptions: DrivingOptions,
+             //unitSystem: METRIC,
+             region: "SG",
+             provideRouteAlternatives: true,
+         
+             
          }, function (response, status) {
              if (status === google.maps.DirectionsStatus.OK) {
                  directionsDisplay.setDirections(response);
@@ -104,9 +165,9 @@
         <tr>
         <td class="style2" colspan="2">
         
-            View<asp:CheckBoxList ID="toggleCbl" runat="server" Enabled="false">
-            <asp:ListItem>Speed Camera</asp:ListItem>
-            </asp:CheckBoxList>
+            View Options<br />
+        
+            <asp:Button ID="Button1"  onclientclick="showMarkers(); return false;" runat="server" Text="Show Speed Cameras" CausesValidation="False" />
         
             </td>
         </tr>

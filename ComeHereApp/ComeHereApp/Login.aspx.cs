@@ -12,9 +12,10 @@ namespace ComeHereApp
 {
     public partial class Login : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void signUpBtn_Click(object sender, EventArgs e)
@@ -39,7 +40,16 @@ namespace ComeHereApp
                 if ((passWordTxt.Text.ToString().Equals(ds.Tables[0].Rows[0]["password"].ToString().Trim()))) //if password is correct
                 {
                     //todo setup session
-                    Response.Redirect("Index.aspx");
+                    Session["user"] = userNameTxt.Text.Trim();
+                    String redirect = Request.QueryString["redirect"];
+                    if(!String.IsNullOrEmpty(redirect))
+                    {
+                        Response.Redirect(Server.UrlDecode(redirect));
+                    }
+                    else
+                    {
+                        Response.Redirect("index.aspx");
+                    }
                 }
                 else
                 {

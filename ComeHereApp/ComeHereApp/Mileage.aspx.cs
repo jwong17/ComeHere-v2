@@ -15,12 +15,16 @@ namespace ComeHereApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["user"] as string))
+            {
+                Response.Redirect("Login.aspx?redirect=" + Server.UrlEncode(Request.Url.AbsoluteUri));
+            }
             if (!((Page)System.Web.HttpContext.Current.CurrentHandler).IsPostBack)
             {
             string connStr = ConfigurationManager.ConnectionStrings["myConnectionString"].ToString(); // connection string
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            SqlCommand com = new SqlCommand("SELECT Make + Model , id from Cars where cars.id = ANY (Select carID from UsersCars where userID = 1)", con); // table name 
+            SqlCommand com = new SqlCommand("SELECT Make + Model , id from Cars where cars.id = ANY (Select carID from UsersCars where userID = (Select [user].Id from dbo.[User] where [user].username = '"+Session["user"].ToString()+"'))", con); // table name 
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);  // fill dataset
@@ -41,7 +45,7 @@ namespace ComeHereApp
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
 
-            SqlCommand com = new SqlCommand("SELECT totalDist,totalLitres from UsersCars where UsersCars.carID = " + selectCarDDL.SelectedValue.ToString() + " and UsersCars.userID = 1", con); // table name 
+            SqlCommand com = new SqlCommand("SELECT totalDist,totalLitres from UsersCars where UsersCars.carID = " + selectCarDDL.SelectedValue.ToString() + " and UsersCars.userID = (Select [user].Id from dbo.[User] where [user].username = '"+Session["user"].ToString()+"')", con); // table name 
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -65,7 +69,7 @@ namespace ComeHereApp
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
 
-            SqlCommand com = new SqlCommand("UPDATE UsersCars SET totalDist = totalDist + " + tripDist.Text.ToString() + ", totalLitres = totalLitres + " + tripLitres.Text.ToString() + " WHERE userID = 1 and carID = "+selectCarDDL.SelectedValue.ToString(), con);
+            SqlCommand com = new SqlCommand("UPDATE UsersCars SET totalDist = totalDist + " + tripDist.Text.ToString() + ", totalLitres = totalLitres + " + tripLitres.Text.ToString() + " WHERE userID = (Select [user].Id from dbo.[User] where [user].username = '"+Session["user"].ToString()+"') and carID = " + selectCarDDL.SelectedValue.ToString(), con);
             com.ExecuteNonQuery();
 
             refreshLabels();

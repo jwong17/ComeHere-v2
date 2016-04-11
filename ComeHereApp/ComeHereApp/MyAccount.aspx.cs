@@ -13,7 +13,7 @@ namespace ComeHereApp
         {
             if (string.IsNullOrEmpty(Session["user"] as string))
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx?redirect=" + Server.UrlEncode(Request.Url.AbsoluteUri));
             }
         }
     }

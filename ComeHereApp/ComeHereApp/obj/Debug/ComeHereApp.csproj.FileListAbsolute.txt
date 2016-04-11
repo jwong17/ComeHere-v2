@@ -14,3 +14,11 @@ C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\Com
 \\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.pdb
 C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll.config
 C:\Users\Jasmine\Documents\GitHub\ComeHere\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\2006app\ComeHere\ComeHereApp\ComeHereApp\bin\AjaxControlToolkit.dll
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll.config
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\bin\ComeHereApp.dll
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\bin\ComeHereApp.pdb
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\bin\AjaxControlToolkit.dll
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.csprojResolveAssemblyReference.cache
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.dll
+C:\Users\Jasmine\Desktop\ComeHereApp\ComeHereApp\obj\Debug\ComeHereApp.pdb

@@ -6,10 +6,11 @@
 <head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
-       
+      
     </asp:ContentPlaceHolder>
+    
      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <link rel="Stylesheet" href="css/styles.css" />
+    <link rel="Stylesheet" href="css/navbar.css" />
     <style type="text/css">
         #nav {
             margin-bottom: 10px;
@@ -27,10 +28,26 @@
         #content { 
             position: relative;
             top: 45px;
-            
-            
-            
-            
+        }
+
+        body{
+            background:#ffffff;
+        }
+        .btnStyle{
+            background-color: #dcdbdb;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 4px;
+            width:170px;
+        }
+        .btnStyle:hover{
+             background-color: #cbc9c9;
+             box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 4px 7px 0 rgba(0,0,0,0.19);
         }
     </style>
 </head>
@@ -43,12 +60,20 @@
        <li><a href="MyAccount.aspx"><span>My Account</span></a></li>
        <li><a href="Mileage.aspx"><span>Mileage Calculator</span></a></li>
        <li class='last'><a href='#'><span>Contact</span></a></li>
+        <li style="float:right; align-items:center">
+            <asp:LinkButton ID="linkBtnLogout" runat="server" OnClick="linkBtnLogout_Click">Logout</asp:LinkButton>
+            </li>
     </ul>
+    
         </div>
     </div>
         <div id="main">
     <div id="content">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         
+           
+        
+     
         
            
         

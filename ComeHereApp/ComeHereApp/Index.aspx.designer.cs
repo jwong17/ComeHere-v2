@@ -13,6 +13,15 @@ namespace ComeHereApp {
     public partial class Index {
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
         /// startTxt control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace ComeHereApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox startTxt;
+        
+        /// <summary>
+        /// Image2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
         /// destinationTxt control.
@@ -49,12 +67,12 @@ namespace ComeHereApp {
         protected global::System.Web.UI.WebControls.Button searchBtn;
         
         /// <summary>
-        /// toggleCbl control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList toggleCbl;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

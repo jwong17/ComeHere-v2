@@ -11,7 +11,25 @@ namespace ComeHereApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(Session["user"] as string))
+            {
+                linkBtnLogout.Visible = false;
+            }
+            else
+            {
+                linkBtnLogout.Visible = true;
+            }
         }
+
+        
+
+        protected void linkBtnLogout_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session.Abandon();
+            Response.Redirect("index.aspx");
+        }
+
+
+
     }
 }
